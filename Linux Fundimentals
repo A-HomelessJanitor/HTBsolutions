@@ -41,3 +41,16 @@
   awk   display the first ($1) and last ($NF) result of the line
   sed   uses regex to subsitute specified objects from defines patterns
   wc    used to count items or lines in a file
+
+  solutions
+  netstat -ln4 | grep "LISTEN" | grep -v "127" | wc -l ( the 'l' in the flag means interface table for Iface and n4 means dont resolve DNS hostnames only use ipv4
+  use "ps -e | grep 'ftp' " to get the process number then use "ps -eLf | grep "(num)" " to get the user name as -eLf flag gives more info on the process
+  curl https://www.inlanefreight.com | tr ' ' '\n' | grep 'https://www.inlanefreight.com' | tr "'" '"' | cut -d '"' -f2 | sort | uniq | wc -l
+    1. Curl the domain 
+    2. turn all whitespaces into new lines 
+    3. grab all of the lines that contain that string 
+    4. Turn all single quote characters into double quotes
+    5. get all info that are inbetween double quotes (") and pipe them 
+    6. do a standard sort of info 
+    7. remove all duplicate lines with uniq 
+    8. count how many lines there are
