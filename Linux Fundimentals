@@ -1,0 +1,43 @@
+# --    Linux Fundimentals    -- #
+
+#  System Information  #
+  whoami	  Displays current username.
+  id	  Returns users identity
+  hostname	  Sets or prints the name of current host system.
+  uname	  Prints basic information about the operating system name and system hardware.
+  pwd	  Returns working directory name.
+  ifconfig	  The ifconfig utility is used to assign or to view an address to a network interface and/or configure network interface parameters.
+  ip	  Ip is a utility to show or manipulate routing, network devices, interfaces and tunnels.
+  netstat	  Shows network status.
+  ss	  Another utility to investigate sockets.
+  ps	  Shows process status.
+  who	  Displays who is logged in.
+  env	  Prints environment or sets and executes command.
+  lsblk	  Lists block devices.
+  lsusb	  Lists USB devices
+  lsof	  Lists opened files.
+  lspci	  Lists PCI devices.
+
+#  File Discriptors and File Redirections  #
+  dpkg --list | grep "ii" | wc -l  dpkg is a somewhat universal package manager. "ii" indicates that that package is installed
+  instead of using 2>/dev/null to get rid of permission denined use "2>1"
+  Data Stream for Input
+    STDIN – 0
+  Data Stream for Output
+    STDOUT – 1
+  Data Stream for Output that relates to an error occurring.
+    STDERR – 2
+
+# Filter Contents #
+  more  read contents of a file and can scroll
+  less  same as more but lines disapear after exiting
+  head  reads first 10 lines of a file
+  tail  read last 10 lines of a file
+  sort  sort the desired results alphabetically or numerically
+  grep  only read lines in a file that have content you want
+  cut   read contents of lines after something like ":" so if the line was "password:abcdefg" then it would return "abcdefg"
+  tr    replace content in a line with one you specify ie. turn any ":" into a space when displaying the read
+  column display more information about files and also oragnise them in a more readable way
+  awk   display the first ($1) and last ($NF) result of the line
+  sed   uses regex to subsitute specified objects from defines patterns
+  wc    used to count items or lines in a file
