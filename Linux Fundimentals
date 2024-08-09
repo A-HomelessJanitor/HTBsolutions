@@ -42,15 +42,44 @@
   sed   uses regex to subsitute specified objects from defines patterns
   wc    used to count items or lines in a file
 
-  solutions
-  netstat -ln4 | grep "LISTEN" | grep -v "127" | wc -l ( the 'l' in the flag means interface table for Iface and n4 means dont resolve DNS hostnames only use ipv4
-  use "ps -e | grep 'ftp' " to get the process number then use "ps -eLf | grep "(num)" " to get the user name as -eLf flag gives more info on the process
-  curl https://www.inlanefreight.com | tr ' ' '\n' | grep 'https://www.inlanefreight.com' | tr "'" '"' | cut -d '"' -f2 | sort | uniq | wc -l
-    1. Curl the domain 
-    2. turn all whitespaces into new lines 
-    3. grab all of the lines that contain that string 
-    4. Turn all single quote characters into double quotes
-    5. get all info that are inbetween double quotes (") and pipe them 
-    6. do a standard sort of info 
-    7. remove all duplicate lines with uniq 
-    8. count how many lines there are
+    Solutions
+    netstat -ln4 | grep "LISTEN" | grep -v "127" | wc -l ( the 'l' in the flag means interface table for Iface and n4 means dont resolve DNS hostnames only use ipv4
+    use "ps -e | grep 'ftp' " to get the process number then use "ps -eLf | grep "(num)" " to get the user name as -eLf flag gives more info on the process
+    curl https://www.inlanefreight.com | tr ' ' '\n' | grep 'https://www.inlanefreight.com' | tr "'" '"' | cut -d '"' -f2 | sort | uniq | wc -l
+      1. Curl the domain 
+      2. turn all whitespaces into new lines 
+      3. grab all of the lines that contain that string 
+      4. Turn all single quote characters into double quotes
+      5. get all info that are inbetween double quotes (") and pipe them 
+      6. do a standard sort of info 
+      7. remove all duplicate lines with uniq 
+      8. count how many lines there are
+
+# Regular Expressions #
+    1	(a)	The round brackets are used to group parts of a regex. Within the brackets, you can define further patterns which should be processed together.
+    2	[a-z]	The square brackets are used to define character classes. Inside the brackets, you can specify a list of characters to search for.
+    3	{1,10}	The curly brackets are used to define quantifiers. Inside the brackets, you can specify a number or a range that indicates how often a previous pattern should be repeated.
+    4	|	Also called the OR operator and shows results when one of the two expressions matches
+    5	.*	Also called the AND operator and displayed results only if both expressions match
+
+# Permission Management #
+    Binary Notation:                4 2 1  |  4 2 1  |  4 2 1
+    ----------------------------------------------------------
+    Binary Representation:          1 1 1  |  1 0 1  |  1 0 0
+    ----------------------------------------------------------
+    Octal Value:                      7    |    5    |    4
+    ----------------------------------------------------------
+    Permission Representation:      r w x  |  r - x  |  r - -
+
+# User Management #
+  sudo	Execute command as a different user.
+  su	The su utility requests appropriate user credentials via PAM and switches to that user ID (the default user is the superuser). A shell is then executed.
+  useradd	Creates a new user or update default new user information.
+  userdel	Deletes a user account and related files.
+  usermod	Modifies a user account.
+  addgroup	Adds a group to the system.
+  delgroup	Removes a group from the system.
+  passwd	Changes user password.
+
+# Package Management #
+  
